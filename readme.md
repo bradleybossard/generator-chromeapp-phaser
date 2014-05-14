@@ -19,8 +19,9 @@ Available generators:
 * [chromeapp-phaser:samples](#samples)
 
 ### App
-
+<!--
 ![](http://i.imgur.com/vh7uo4X.gif)
+-->
 
 Sets up a new Chrome App, generating all the boilerplate you need to get started.
 

@@ -1,20 +1,21 @@
 {
-  "name": "generator-chromeapp",
+  "name": "generator-chromeapp-phaser",
   "version": "0.2.8",
-  "description": "Yeoman generator for Chrome App",
+  "description": "Yeoman generator for a Chrome App using the Phaser JS game engine",
   "keywords": [
     "yeoman-generator",
     "scaffold",
     "chrome",
-    "apps"
+    "apps",
+    "phaser"
   ],
-  "homepage": "https://github.com/yeoman/generator-chromeapp",
-  "bugs": "https://github.com/yeoman/generator-chromeapp/issues",
-  "author": "The Yeoman Team",
+  "homepage": "https://github.com/bradleybossard/generator-chromeapp-phaser",
+  "bugs": "https://github.com/yeoman/generator-chromeapp-phaser/issues",
+  "author": "Bradley Bossard",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/yeoman/generator-chromeapp.git"
+    "url": "git://github.com/yeoman/generator-chromeapp-phaser.git"
   },
   "scripts": {
     "test": "mocha --reporter spec"
