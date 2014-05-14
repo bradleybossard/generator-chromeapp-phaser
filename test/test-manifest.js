@@ -15,7 +15,7 @@ describe('#permission generator', function () {
         return done(err);
       }
 
-      this.generator = helpers.createGenerator('chromeapp:permission', [
+      this.generator = helpers.createGenerator('chromeapp-phaser:permission', [
         '../../permission'
       ]);
       this.generator.options['skip-install'] = true;

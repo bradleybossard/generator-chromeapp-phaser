@@ -31,7 +31,7 @@ var ChromeAppGenerator = module.exports = function ChromeAppGenerator(args, opti
   this.compass = options.compass;
 
   // add more permissions
-  this.hookFor('chromeapp:permission', { as: 'subgen' });
+  this.hookFor('chromeapp-phaser:permission', { as: 'subgen' });
 
   // for hooks to resolve on mocha by default
   options['test-framework'] = this.testFramework;

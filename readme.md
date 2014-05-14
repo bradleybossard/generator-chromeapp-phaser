@@ -1,22 +1,22 @@
-# Chrome App generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-chromeapp.svg?branch=master)](http://travis-ci.org/yeoman/generator-chromeapp)
+# Chrome App generator [![Build Status](https://secure.travis-ci.org/yeoman/generator-chromeapp-phaser.svg?branch=master)](http://travis-ci.org/yeoman/generator-chromeapp-phaser)
 
-Maintainer: [Jimmy Moon](https://github.com/ragingwind)
+Maintainer: [Bradley Bossard](https://github.com/bradleybossard)
 
-> Chrome Apps boilerplate generator that creates everything you need to get started with development. To test, go to: chrome://extensions, enable Developer mode and load `app` as an unpacked extension.
+> Chrome Apps with Phaser boilerplate generator that creates everything you need to get started with development. To test, go to: chrome://extensions, enable Developer mode and load `app` as an unpacked extension.
 
 ## Getting Started
 
-- First make a new directory, and `cd` into it: mkdir my-new-chromeapp && cd $_
-- Install the generator: `npm install -g generator-chromeapp`
-- Run: `yo chromeapp`
+- First make a new directory, and `cd` into it: mkdir my-new-chromeapp-phaser && cd $_
+- Install the generator: `npm install -g generator-chromeapp-phaser`
+- Run: `yo chromeapp-phaser`
 
 ## Generators
 
 Available generators:
 
-* [chromeapp](#app) (aka [chromeapp:app](#app))
-* [chromeapp:permission](#permission)
-* [chromeapp:samples](#samples)
+* [chromeapp-phaser](#app) (aka [chromeapp-phaser:app](#app))
+* [chromeapp-phaser:permission](#permission)
+* [chromeapp-phaser:samples](#samples)
 
 ### App
 
@@ -26,7 +26,7 @@ Sets up a new Chrome App, generating all the boilerplate you need to get started
 
 Example: 
 ```bash
-yo chromeapp
+yo chromeapp-phaser
 ```
 
 ### Permission
@@ -37,7 +37,7 @@ Create manifest.json or append permission into manifest.json. You can choose per
 
 Example: 
 ```bash
-yo chromeapp:permmision
+yo chromeapp-phaser:permmision
 ```
 
 ### Samples
@@ -48,7 +48,7 @@ You can create a new Chrome App by the [google-chrome-app samples](https://githu
 
 Example: 
 ```bash
-yo chromeapp:samples
+yo chromeapp-phaser:samples
 ```
 
 ## Build
