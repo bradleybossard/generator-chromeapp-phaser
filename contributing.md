@@ -1,1 +1,2 @@
-See the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contributing.md)
+Original repo forked from https://github.com/yeoman/generator-chromeapp
+Bradley Bossard - New development of combining Phaser JS base files.
