@@ -2,7 +2,10 @@
 
 Maintainer: [Bradley Bossard](https://github.com/bradleybossard)
 
-> Chrome Apps with Phaser boilerplate generator that creates everything you need to get started with development. To test, go to: chrome://extensions, enable Developer mode and load `app` as an unpacked extension.
+> Chrome Apps using Phaser boilerplate generator that creates everything you need to get started with development.  To test, go to: chrome://extensions, enable Developer mode and load `app` as an unpacked extension.
+
+## Notes
+The idea is combine a Chrome App generator with a Phaser generator, like generator-phaser, which parses out the different pieces of the Phaser framework into seperate .js files.  Another caveat is Chrome apps have loosened restrictions on using the file:// protocol, and therefore we don''t need to run a NodeJS server.
 
 ## Getting Started
 
@@ -20,6 +23,7 @@ Available generators:
 
 ### App
 <!--
+TODO(bradleybossard): Replace this image with new animated GIFs
 ![](http://i.imgur.com/vh7uo4X.gif)
 -->
 
@@ -31,8 +35,10 @@ yo chromeapp-phaser
 ```
 
 ### Permission
-
+<!--
+TODO(bradleybossard): Replace this image with new animated GIFs
 ![](http://i.imgur.com/O6LrhEB.png)
+-->
 
 Create manifest.json or append permission into manifest.json. You can choose permission to put into manifest.json
 
@@ -41,9 +47,12 @@ Example:
 yo chromeapp-phaser:permmision
 ```
 
+<!--
+TODO(bradleybossard): Eventually there will be samples, but none available yet.
 ### Samples
-
+TODO(bradleybossard): Replace this image with new animated GIFs
 ![](http://i.imgur.com/OgPhpfA.gif)
+
 
 You can create a new Chrome App by the [google-chrome-app samples](https://github.com/GoogleChrome/chrome-app-samples) on github repository.
 
@@ -51,6 +60,7 @@ Example:
 ```bash
 yo chromeapp-phaser:samples
 ```
+-->
 
 ## Build
 
