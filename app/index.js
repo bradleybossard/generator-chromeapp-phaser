@@ -85,16 +85,6 @@ ChromeAppGenerator.prototype.askFor = function askFor(argument) {
   }];
 
   this.prompt(prompts, function(answers) {
-/*
-    var encode = function(str) {return str && str.replace(/\"/g, '\\"');};
-    this.appName = encode(answers.appName);
-    this.appDescription = encode(answers.appDescription);
-    this.phaserVersion = encode(answers.phaserVersion);
-    this.gameHeight = encode(answers.gameHeight);
-    this.gameWidth = encode(answers.gameWidth);
-*/
-
-    //var encode = function(str) {return str && str.replace(/\"/g, '\\"');};
     this.appName = answers.appName;
     this.appDescription = answers.appDescription;
     this.phaserVersion = answers.phaserVersion;
@@ -148,6 +138,7 @@ ChromeAppGenerator.prototype.app = function app() {
   this.mkdir('app/scripts');
   this.copy('scripts/chromereload.js', 'app/scripts/chromereload.js');
   this.copy('scripts/main.js', 'app/scripts/main.js');
+  this.copy('scripts/phaser-override.js', 'app/scripts/phaser-override.js');
   // TODO(bradleybossard): Make a change to put underscore in front of index.js
   //this.template('scripts/index.js', 'app/scripts/index.js');
 
@@ -183,4 +174,4 @@ ChromeAppGenerator.prototype.install = function () {
     skipInstall: this.options['skip-install'],
     callback: done
   });
-}
+};
