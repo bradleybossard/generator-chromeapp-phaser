@@ -1,25 +1,23 @@
-// The purpose of this file is to override the _checkFeatures functions of the Phaser library which makes a check for localStorage.  In Chrome apps, this
-// needs to be a check for chrome.storage.local
-
+/* global Phaser */
+// The purpose of this file is to override the _checkFeatures functions of the Phaser library which makes a check for localStorage.
+// In Chrome apps, this needs to be a check for chrome.storage.local
+'use strict';
 (function () {
 	Phaser.Device.prototype._checkFeatures = function () {
 
-        this.canvas = !!window['CanvasRenderingContext2D'] || this.cocoonJS;
+        this.canvas = !!window.CanvasRenderingContext2D || this.cocoonJS;
 
-        if (chrome.storage.local) {
+        // Check if chrome.storage exists, if not, don't support local storage.
+        if (chrome.storage && chrome.storage.local) {
             // Chrome app
             this.localStorage = true;
         } else {
-            // Original Phaser code
-            try {
-                this.localStorage = !!localStorage.getItem;
-            } catch (error) {
-                this.localStorage = false;
-            }
+            this.localStorage = false;
         }
 
-        this.file = !!window['File'] && !!window['FileReader'] && !!window['FileList'] && !!window['Blob'];
-        this.fileSystem = !!window['requestFileSystem'];
+        // The rest of this file is the same as the original function.
+        this.file = !!window.File && !!window.FileReader && !!window.FileList && !!window.Blob;
+        this.fileSystem = !!window.requestFileSystem;
         this.webGL = ( function () { try { var canvas = document.createElement( 'canvas' ); return !! window.WebGLRenderingContext && ( canvas.getContext( 'webgl' ) || canvas.getContext( 'experimental-webgl' ) ); } catch( e ) { return false; } } )();
 
         if (this.webGL === null || this.webGL === false)
@@ -31,7 +29,7 @@
             this.webGL = true;
         }
 
-        this.worker = !!window['Worker'];
+        this.worker = !!window.Worker;
 
         if ('ontouchstart' in document.documentElement || (window.navigator.maxTouchPoints && window.navigator.maxTouchPoints > 1))
         {
@@ -49,6 +47,6 @@
 
         this.getUserMedia = !!(navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
-    }
+    };
 })();
 
