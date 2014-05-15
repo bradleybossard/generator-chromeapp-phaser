@@ -1,6 +1,6 @@
 {
   "name": "generator-chromeapp-phaser",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "Yeoman generator for a Chrome App using the Phaser JS game engine",
   "keywords": [
     "yeoman-generator",
