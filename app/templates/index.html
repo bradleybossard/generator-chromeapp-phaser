@@ -14,17 +14,14 @@
     <body>
       <!--<h1><%= appName %></h1>-->
          
-        <!-- bower:js -->
+        <!-- build:js scripts/vendor.js -->
         <script src="bower_components/phaser-official/build/phaser.min.js"></script>
-
-        <!-- endbower -->
+        <!-- endbuild -->
 
         <!-- build:js scripts/index.js -->
 
-
         <% _.forEach(gameStates, function(gameState) {  %><script src="./scripts/states/<%= gameState.shortName %>.js"></script>
         <% }); %>
-
 
         <script src="scripts/phaser-override.js"></script>
         <script src="scripts/index.js"></script>
