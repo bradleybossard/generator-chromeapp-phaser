@@ -12,7 +12,7 @@
         <!-- endbuild -->
     </head>
     <body>
-        <h1><%= appName %></h1>
+      <!--<h1><%= appName %></h1>-->
          
         <!-- bower:js -->
         <script src="bower_components/phaser-official/build/phaser.min.js"></script>
@@ -20,6 +20,12 @@
         <!-- endbower -->
 
         <!-- build:js scripts/index.js -->
+
+
+        <% _.forEach(gameStates, function(gameState) {  %><script src="./scripts/states/<%= gameState.shortName %>.js"></script>
+        <% }); %>
+
+
         <script src="scripts/phaser-override.js"></script>
         <script src="scripts/index.js"></script>
         <!-- endbuild -->
