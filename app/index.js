@@ -76,12 +76,12 @@ ChromeAppGenerator.prototype.askFor = function askFor(argument) {
   {
     name: 'gameWidth',
     message: 'Game Display Width',
-    default: 800
+    default: 900
   },
   {
     name: 'gameHeight',
     message: 'Game Display Height',
-    default: 600
+    default: 700
   }];
 
   this.prompt(prompts, function(answers) {
@@ -110,7 +110,6 @@ ChromeAppGenerator.prototype.git = function git() {
 
 ChromeAppGenerator.prototype.bower = function bower() {
   this.copy('bowerrc', '.bowerrc');
-  //this.copy('_bower.json', 'bower.json');
   this.template('_bower.json', 'bower.json');
 };
 
@@ -123,8 +122,6 @@ ChromeAppGenerator.prototype.editorConfig = function editorConfig() {
 };
 
 ChromeAppGenerator.prototype.mainStylesheet = function mainStylesheet() {
-  //var css = 'styles/main.' + (this.compass ? 's' : '') + 'css';
-  //this.copy(css, 'app/' + css);
   this.copy('styles/main.css', 'app/styles/main.css');
 };
 
@@ -133,34 +130,39 @@ ChromeAppGenerator.prototype.app = function app() {
   this.mkdir('app/bower_components');
   this.mkdir('app/styles');
   this.directory('images', 'app/images');
-  //this.mkdir('app/images');
-  //this.directory(this.coffee ? 'coffees' : 'scripts', 'app/scripts');
   this.mkdir('app/scripts');
   this.copy('scripts/chromereload.js', 'app/scripts/chromereload.js');
-  this.copy('scripts/main.js', 'app/scripts/main.js');
   this.copy('scripts/phaser-override.js', 'app/scripts/phaser-override.js');
-  // TODO(bradleybossard): Make a change to put underscore in front of index.js
-  //this.template('scripts/index.js', 'app/scripts/index.js');
 
-  this.template('index.html', 'app/index.html', this);
+  this.mkdir('app/scripts/states');
+  this.copy('scripts/states/boot.js', 'app/scripts/states/boot.js');
+  this.copy('scripts/states/preload.js', 'app/scripts/states/preload.js');
+  this.copy('scripts/states/menu.js', 'app/scripts/states/menu.js');
+  this.copy('scripts/states/play.js', 'app/scripts/states/play.js');
+  this.copy('scripts/states/gameover.js', 'app/scripts/states/gameover.js');
+  // TODO(bradleybossard): Change filename to _filename
+  this.template('scripts/main.js', 'app/scripts/main.js');
+
   this.template('_locales/en/messages.json', 'app/_locales/en/messages.json', this);
   this.write('app/manifest.json', this.manifest.stringify());
 };
 
 ChromeAppGenerator.prototype.bootstrapGame = function bootstrapGame() {
-  var stateFiles = this.expand('game/states/*.js');
+  var stateFiles = this.expand('app/scripts/states/*.js');
+
   this.gameStates = [];
   var statePattern = new RegExp(/(\w+).js$/);
   stateFiles.forEach(function(file) {
     var state = file.match(statePattern)[1];
     if (!!state) {
-      this.gameStates.push({shortName: state, stateName: this._.capitalize(state) + 'State'});
+      this.gameStates.push({shortName: state, stateName: this._.capitalize(state)});
     }
   }, this);
 
-  // TODO(bradleybossard): Make a change to put underscore in front of index.js
+  // TODO(bradleybossard): Change filename to _filename
   this.template('scripts/index.js', 'app/scripts/index.js');
-  //this.template('game/_main.js','game/main.js');
+  // TODO(bradleybossard): Change filename to _filename
+  this.template('index.html', 'app/index.html');
 };
 
 ChromeAppGenerator.prototype.install = function () {
