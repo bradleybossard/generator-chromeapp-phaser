@@ -22,12 +22,7 @@ Available generators:
 * [chromeapp-phaser:samples](#samples)
 
 ### App
-<!--
-TODO(bradleybossard): Replace this image with new animated GIFs
-![](http://i.imgur.com/vh7uo4X.gif)
--->
-
-Sets up a new Chrome App, generating all the boilerplate you need to get started.
+Sets up a new Chrome App complete with Phaser and a set of state objects (Preloader, Boot, Gameover, Menu, Play)
 
 Example: 
 ```bash
@@ -35,32 +30,12 @@ yo chromeapp-phaser
 ```
 
 ### Permission
-<!--
-TODO(bradleybossard): Replace this image with new animated GIFs
-![](http://i.imgur.com/O6LrhEB.png)
--->
-
 Create manifest.json or append permission into manifest.json. You can choose permission to put into manifest.json
 
 Example: 
 ```bash
 yo chromeapp-phaser:permmision
 ```
-
-<!--
-TODO(bradleybossard): Eventually there will be samples, but none available yet.
-### Samples
-TODO(bradleybossard): Replace this image with new animated GIFs
-![](http://i.imgur.com/OgPhpfA.gif)
-
-
-You can create a new Chrome App by the [google-chrome-app samples](https://github.com/GoogleChrome/chrome-app-samples) on github repository.
-
-Example: 
-```bash
-yo chromeapp-phaser:samples
-```
--->
 
 ## Build
 
