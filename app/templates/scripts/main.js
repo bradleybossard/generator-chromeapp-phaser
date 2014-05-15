@@ -2,8 +2,8 @@
 
 // Listens for the app launching then creates the window
 chrome.app.runtime.onLaunched.addListener(function() {
-    var width = 500;
-    var height = 300;
+    var width = <%= gameWidth %>;
+    var height = <%= gameHeight %>;
 
     chrome.app.window.create('index.html', {
         id: 'main',
