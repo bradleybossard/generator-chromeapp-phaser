@@ -1,7 +1,7 @@
 var path = require('path');
 var util = require('util');
 var yeoman = require('yeoman-generator');
-var manifest = require('../manifest');
+var manifest = require('./manifest');
 var chalk = require('chalk');
 
 var ChromeAppGenerator = module.exports = function ChromeAppGenerator(args, options, config) {
