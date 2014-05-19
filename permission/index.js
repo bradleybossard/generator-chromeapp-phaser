@@ -5,7 +5,10 @@ var yeoman = require('yeoman-generator');
 var path = require('path');
 var fs = require('fs');
 var _ = require('lodash');
-var manifest = require('../manifest');
+// manifest.js used to be in the root directory, but an apparent bug with npm publish wasn't picking it up
+// during the publish process.  I fixed the bug by moving it to the app directory and the reason you see
+// the ugly path reference here.
+var manifest = require('../app/manifest');
 
 var PermissionGenerator = module.exports = function PermissionGenerator(args, options, config) {
   var dest = path.join(process.cwd(), '/app/manifest.json');
